@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    ContactMailer.send_mail().deliver
+    # ContactMailer.send_mail().deliver
   end
    def create
     user = User.find_by(email: params[:session][:email].downcase)
@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     else
       
       flash[:danger] = 'Login failed'
+      error = 'login failed'
        redirect_to new_session_path
       
     end
@@ -17,7 +18,7 @@ class SessionsController < ApplicationController
    
     def destroy
     session.delete(:user_id)
-    flash[:notice] = 'You logged out'
+    # flash[:notice] = 'You logged out'
     redirect_to new_session_path
     end
 end

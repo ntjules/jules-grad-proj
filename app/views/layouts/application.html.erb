@@ -6,19 +6,148 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!--  <meta charset="utf-8">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+  <!--        <meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
   </head>
 
   <body>
     <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
+      
+      <div class="alert alert-danger alert-dismissible bg-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+               <%= content_tag(:div, value, class: "#{key}") %>
+              </div>
     <% end %>
-     <% if logged_in? %>
-      <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_session_path %>
+    <!-- <% if logged_in? %>-->
+    <!--  <%= link_to "Profile", user_path(current_user.id) %>-->
+    <!--  <%= link_to "Logout", session_path(current_user.id), method: :delete %>-->
+    <!--<% else %>-->
+    <!--  <%= link_to "Sign up", new_user_path %>-->
+    <!--  <%= link_to "Login", new_session_path %>-->
+    <!--<% end %>-->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="container">
+         <div class="row">
+       <div class="col-md-12 " id="header"><%= image_tag "w.png" , id: 'headerimg', class: 'img-responsive'%></div>
+        
+<div class="col-md-1"><%= image_tag "i.gif"%><%= image_tag "i.gif"%></div><div class="col-md-10 ">
+  <nav class="navbar navbar-inverse bg-light " role="navigation">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">coffee WS</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" >
+      <ul class="nav navbar-nav "  >
+        <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li ><a href="#">About Us<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon"></span></a></li>
+        <li ><a href="#">Contact us<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+        
+          <% if logged_in? %>
+      <!--<%= link_to "Profile", user_path(current_user.id) %>-->
+      <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs  glyphicon glyphicon-user"></span></a></li>
+       <li ><a style= "color:white;font-size: 2rem;;"><%=  current_user.name.upcase.truncate(10, separator: /\s/) %></a></li>
+      
+        <%= image_tag current_user.image_url , id: 'profilimg', class: 'img-responsive img-circle '%>
+         </ul>
+        <ul class="nav navbar-nav pull-right">
+           <li><%= link_to "Logout", session_path(current_user.id), method: :delete ,class:'  showopacity glyphicon glyphicon-log-out' %> </li>
+        </ul>
+         
+
+        
+        
+         <% else %>
+          <li ><a href="#">Sign Up<span style="font-size:16px;" class="pull-right hidden-xs showopacity "></span></a></li>
+        
+               </ul>
+        <ul class="nav navbar-nav pull-right">
+           <li  data-toggle="modal" data-target="#myModal" ><a>Login<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-log-in"></span></a></li>
+        </ul>
+      <!--<%= link_to "Sign up", new_user_path %>-->
+      <!--<%= link_to "Login", new_session_path %>-->
     <% end %>
+    </div>
+  </div>
+</nav></div>
+<div class="col-md-1"><%= image_tag "i.gif"%><%= image_tag "i.gif"%></div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+
     <%= yield %>
+    
+    <div class="col-md-12 footer">
+          
+      <p>© all right reserved to Tumba cws 2018  developed by: JULES All RIGHTS RESERVED.</p>
+   
+ </div></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   </body>
 </html>

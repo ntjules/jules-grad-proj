@@ -1,11 +1,225 @@
-<h1>Log in</h1>
-<%= form_with(scope: :session, url: sessions_path) do |f| %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+      <!--<div class="container">-->
+<!--        <div class="row">-->
+<!--       <div class="col-md-12" id="header"><%= image_tag "w.png" , id: 'headerimg', class: 'img-responsive'%></div>-->
+        
+<!--<div class="col-md-2"><%= image_tag "i.gif"%><%= image_tag "i.gif"%></div><div class="col-md-8">-->
+<!--  <nav class="navbar navbar-inverse sidebar" role="navigation">-->
+<!--    <div class="container-fluid">-->
+    <!-- Brand and toggle get grouped for better mobile display -->
+<!--    <div class="navbar-header">-->
+<!--      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">-->
+<!--        <span class="sr-only">Toggle navigation</span>-->
+<!--        <span class="icon-bar"></span>-->
+<!--        <span class="icon-bar"></span>-->
+<!--        <span class="icon-bar"></span>-->
+<!--      </button>-->
+<!--      <a class="navbar-brand" href="#">coffee WS</a>-->
+<!--    </div>-->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+<!--    <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">-->
+<!--      <ul class="nav navbar-nav ">-->
+<!--        <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>-->
+<!--        <li ><a href="#">About Us<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon"></span></a></li>-->
+<!--        <li ><a href="#">Contact us<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>-->
+<!--         <li ><a href="#">Sign Up<span style="font-size:16px;" class="pull-right hidden-xs showopacity "></span></a></li>-->
+       
+         
+<!--      </ul>-->
+<!--        <ul class="nav navbar-nav pull-right">-->
+<!--           <li  data-toggle="modal" data-target="#myModal" ><a>Login<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-log-in"></span></a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav></div>-->
+<!--<div class="col-md-2"><%= image_tag "i.gif"%><%= image_tag "i.gif"%></div>-->
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
 
-  <%= f.submit "Log in" %>
-<% end %>
+    <div>
+ <%= image_tag "wall2.jpeg" , id: 'picsize', class: 'mySlides img-responsive' %>
+ <%= image_tag "wall.jpeg" , id: 'picsize', class: 'mySlides img-responsive' %>
+ <%= image_tag "wall7.jpeg" , id: 'picsize', class: 'mySlides img-responsive' %>
+  
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+</script>
+     
+     
+    
+        
+   
+              
+ <!--<div  id="forimg">  <figure  >-->
+
+ 
+  <!--<%= image_tag "wall7.jpg", id: 'picsize' %>-->
+ <!-- <%= image_tag "wall.jpg" , id: 'picsize'%>-->
+ <!-- <%= image_tag "wall2.jpg" , id: 'picsize'%>-->
+ <!-- <%= image_tag "wall5.jpeg" , id: 'picsize'%>-->
+ <!-- <%= image_tag "wall5.jpeg" , id: 'picsize' %>-->
+  
+ <!--               </figure>-->
+ <!--             </div>  -->
+
+
+<div class="panel panel-default" >
+   <div class="panel-body">
+         <%= image_tag "coffee_plant.png" , id: 'imgcontent', class: 'img-rounded img-responsive pull-left'%>
+         <h3 style="text-align: center;">Coffee Plant Care Tips</h3>
+  <p style="text-align: center;">Origin , height , humidity , temperature ,  soil , fertilizer , propagation</p> </div>
+</div>
+
+<div class="panel panel-default" >
+   <div class="panel-body">
+      <%= image_tag "fgg.jpg" , id: 'imgcontent', class: 'img-rounded img-responsive pull-left'%>
+    
+     <h3 style="text-align: center;" > What is the best way to grow a coffee plant?</h3>
+  <p style="text-align: center;" >TWhat kind of fertiliser should I use? 
+            -How much sunlight should it get? 
+-How ......? </p> </div>
+</div>
+
+<div class="panel panel-default" >
+   <div class="panel-body">
+    <%= image_tag "benefits.jpg" , id: 'imgcontent', class: 'img-rounded img-responsive pull-left'%>
+     <h3 style="text-align: center;">The Benefits of Coffee: From Your Heart to Your Brain</h3>
+  <p style="text-align: center;" >The benefits of coffee are becoming so well established that, for the first time,..... </p> </div>
+</div>
+             
+  
+               
+         
+ <!--   <div class="col-md-12 footer">-->
+          
+ <!--     <p>© all right reserved to Tumba cws 2018  developed by: JULES All RIGHTS RESERVED.</p>-->
+   
+ <!--</div></div>-->
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- row -->
+       <!--</div> <!-- container -->
+<!--   </body> -->
+    
+
+<!--</html>-->
+
+
+
+
+
+
+
+  
+
+
+
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+           
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Sign In</div>
+                        <!-- <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div> -->
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                            
+                        <!--<form id="loginform" class="form-horizontal" role="form">-->
+                                      <%= form_with(scope: :session, url: sessions_path) do |f| %>
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <!--<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email"> -->
+                                          <%= f.email_field :email ,class: 'form-control', placeholder: 'User name ' %>
+                                    </div>
+                                
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <!--<input id="login-password" type="password" class="form-control" name="password" placeholder="password">-->
+                                     <%= f.password_field :password  ,class: 'form-control', placeholder: 'User name' %>
+                                    </div>
+                                    
+
+                           
+                                              
+                                               
+                                              
+                                            
+                                               
+                                              
+                                            
+                          
+
+
+                                <div style="margin-top:10px" class="form-group">
+                                    <!-- Button -->
+
+                                    <div class="col-sm-12 controls ">
+                                        <%= f.submit "Log in" , id: 'btn-login', class:'btn btn-success',:style => 'margin-bottom: 10px;'%>
+                                              <% end %>
+                                     
+                                    </div>
+                                </div>
+                                
+                                
+
+
+                                <div class="form-group">
+                                    <div class="col-md-12 control">
+                                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                            Don't have an account! 
+                                        <a href="register.html" >
+                                            Sign Up Here
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>    
+                            <!--</form>     -->
+
+
+
+                        </div>                     
+                    </div>  
+        <!-- </div> -->
+        
+       
+      </div>
+    </div>
+  </div>
+ 

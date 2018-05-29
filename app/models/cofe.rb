@@ -1,0 +1,2 @@
+class Cofe < ApplicationRecord
+end
