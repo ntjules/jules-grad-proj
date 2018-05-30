@@ -9,8 +9,10 @@ class CoffeebinsController < ApplicationController
    end
    def unpayed
      @cofeebin=Coffeebin.joins(:user)
-                        .select("users.*,(coffeebins.quantity).sum As cquantity")
+                        .select("users.*,(coffeebins.quantity).sum As cquantity,(coffeebins.amount).sum As camount")
+                        .where(:payed => "true")
                         .group('users.id')
+                        .order('camount desc')
     
    end
    
