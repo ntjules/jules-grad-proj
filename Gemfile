@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.4.0"
+
 
 
 git_source(:github) do |repo_name|
@@ -14,6 +14,8 @@ gem 'ransack'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'bootstrap_form'
+gem 'jquery-ui-rails'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'

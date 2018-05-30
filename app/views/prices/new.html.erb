@@ -1,4 +1,18 @@
-<div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+       <% if isadmin? %>
+ <div class="col-md-2">
+			<ul class="nav nav-pills nav-stacked ">
+				<li ><a href="#">Home</a></li>
+				<li ><%= link_to "Add Coffeebeans", new_coffeebin_path %></li>
+				<li class="active"><%= link_to "Change Price", new_price_path %></li>
+				<li><a href="#">Un-Payed</a></li>
+				<li><a href="#">Payed</a></li>
+				<li><a href="#">Make user admin</a></li>
+			</ul>
+		</div>
+    <% end %> 
+    
+    
+    <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <div class="panel-title">Set Today's price</div>

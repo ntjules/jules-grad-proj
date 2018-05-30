@@ -6,8 +6,9 @@ class CoffeebinsController < ApplicationController
    def new
     @cofeebin = Coffeebin.new
      @user = User.all
-    
-    
+   end
+   def unpayed
+     @payed=Coffeebin.includes(:user).all.order('id DESC')
    end
    
    def create
