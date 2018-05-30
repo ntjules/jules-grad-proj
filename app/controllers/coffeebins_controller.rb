@@ -8,7 +8,10 @@ class CoffeebinsController < ApplicationController
      @user = User.all
    end
    def unpayed
-     @payed=Coffeebin.includes(:user).all.order('id DESC')
+     @cofeebin=Coffeebin.joins(:user)
+                        .select("users.*,(coffeebins.quantity).sum As cquantity")
+                        .group('users.id')
+    
    end
    
    def create
