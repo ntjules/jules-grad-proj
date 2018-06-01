@@ -1,14 +1,15 @@
-      <% if isadmin? %>
+      
+       <% if isadmin? %>
  <div class="col-md-3 ">
 			<ul class="nav nav-pills nav-stacked side">
 				<li ><a href="/">Home</a></li>
 				<li ><%= link_to "Add Coffeebeans", new_coffeebin_path %></li>
-				<li ><%= link_to "Change Price", new_price_path %></li>
+				<li class="active"><%= link_to "Change Price", new_price_path %></li>
 				<li><%= link_to "Un-Payed", unpayed_path %></li>
 				<li><%= link_to "Payed", payed_path %></li>
 				<li><%= link_to "Make user admin", makeadmin_path %></li>
 			  <li><%= link_to "Change Profile", edit_user_path(current_user.id)%></li>
-			  <li class="active"><%= link_to "My Profile", user_path(current_user.id) %></li>
+			  <li><%= link_to "My Profile", user_path(current_user.id) %></li>
 			</ul>
 		</div>
 		<% elsif logged_in?%>
@@ -18,23 +19,7 @@
 				<li class="active"><%= link_to "Un-Payed", unpayedforuser_path %></li>
 				<li><%= link_to "Payed", payedforuser_path %></li>
 				<li><%= link_to "Change Profile", edit_user_path(current_user.id)%></li>
-				<li class="active"><%= link_to "My Profile", user_path(current_user.id) %></li>
+				<li><%= link_to "My Profile", user_path(current_user.id) %></li>
 			</ul>
 		</div>
     <% end%>
-
-
-<div class="panel-group col-md-8 col-md-offset-1 ">
-  <div class="panel panel-default">
-      <div class="panel-heading">You are Welcome</div>
-      <div class="panel-body">
- <% if @user.image_url.present? %>
- <%= image_tag @user.image_url, style:'width:200px;max-height:250px;', class:'img-curve pull-right img-responsive' %> 
- <% end %>
- <b>Name: </b><%= @user.name %><br>
-<b>Email: </b><%= @user.email %><br>
-<b>Address: </b><%= @user.address %>
-  
-</div>
-    </div></div>
- 

@@ -1,7 +1,8 @@
 class ContactMailer < ApplicationMailer
-  def send_mail()
- 
+  def send_mail(user)
+  @email = user.email
+  @name = user.name
 
- mail to: "ntjules@gmail.com", subject: "confirmation new blog creation"
+ mail to: @email, subject: "confirmation new of account creation"
   end
 end

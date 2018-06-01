@@ -1,20 +1,31 @@
-        <% if isadmin? %>
- <div class="col-md-2">
-			<ul class="nav nav-pills nav-stacked ">
-				<li ><a href="#">Home</a></li>
+       <% if isadmin? %>
+ <div class="col-md-3 ">
+			<ul class="nav nav-pills nav-stacked side">
+				<li ><a href="/">Home</a></li>
 				<li class="active"><%= link_to "Add Coffeebeans", new_coffeebin_path %></li>
-				<li><%= link_to "Change Price", new_price_path %></li>
-				<li><a href="#">Un-Payed</a></li>
-				<li><a href="#">Payed</a></li>
-				<li><a href="#">Make user admin</a></li>
+				<li ><%= link_to "Change Price", new_price_path %></li>
+				<li><%= link_to "Un-Payed", unpayed_path %></li>
+				<li><%= link_to "Payed", payed_path %></li>
+				<li><%= link_to "Make user admin", makeadmin_path %></li>
+			  <li><%= link_to "Change Profile", edit_user_path(current_user.id)%></li>
+			  <li><%= link_to "My Profile", user_path(current_user.id)%></li>
 			</ul>
 		</div>
-    <% end %> 
-    
+		<% elsif logged_in?%>
+		<div class="col-md-3 ">
+			<ul class="nav nav-pills nav-stacked side ">
+				<li ><a href="/">Home</a></li>
+				<li ><%= link_to "Un-Payed", unpayedforuser_path %></li>
+				<li><%= link_to "Payed", payedforuser_path %></li>
+				<li><%= link_to "Change Profile", edit_user_path(current_user.id)%></li>
+				<li><%= link_to "My Profile", user_path(current_user.id) %></li>
+			</ul>
+		</div>
+    <% end%>
 
 
 
-<div  style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+<div  style=" margin-top:50px" class="mainbox col-md-6  col-sm-8 col-sm-offset-2">
                     <div class="panel panel-warning ">
                         <div class="panel-heading">
                             <div class="panel-title">Make Stock</div>

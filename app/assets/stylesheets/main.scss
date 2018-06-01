@@ -86,3 +86,54 @@ height: 95%;
   width:50px;
   height: 50px;
 }
+
+
+
+
+
+
+
+@keyframes slidy {
+
+0% { left: 0%; } 
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+     
+}
+
+#forimg
+{
+    width: 100%;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.54);
+    
+}
+div#forimg { overflow: hidden; }
+
+
+div#forimg figure img 
+
+{  width: 20%;
+    height:100%;
+    float: left; 
+}
+div#forimg figure { 
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 10s slidy infinite; 
+}
+.side{
+  background-color: white;
+  margin-top: 10px;
+  border-radius: 10px;
+}

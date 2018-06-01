@@ -54,19 +54,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">coffee WS</a>
+      <%= link_to "coffee WS", home_path, class:'navbar-brand' %>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" >
       <ul class="nav navbar-nav "  >
-        <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-        <li ><a href="#">About Us<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon"></span></a></li>
-        <li ><a href="#">Contact us<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
-        
+        <li class="active"><%= link_to "Home", home_path , class:'pull-right hidden-xs showopacity glyphicon glyphicon-home' %></li>
+       
+        <li><%= link_to "About_Us", about_us_path , class:'pull-right hidden-xs showopacity glyphicon glyphicon-' %></li>
+         <li><%= link_to "Contact_Us", contact_us_path , class:'pull-right hidden-xs showopacity glyphicon glyphicon-envelope' %></li>
           <% if logged_in? %>
-      <!--<%= link_to "Profile", user_path(current_user.id) %>-->
-      <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs  glyphicon glyphicon-user"></span></a></li>
-       <li ><a style= "color:white;font-size: 2rem;;"><%=  current_user.name.upcase.truncate(10, separator: /\s/) %></a></li>
+      <li><%= link_to "Profile", user_path(current_user.id), class:'pull-right hidden-xs  glyphicon glyphicon-user' %></li>
+     <li ><a style= "color:white;font-size: 2rem;;"><%=  current_user.name.upcase.truncate(10, separator: /\s/) %></a></li>
       
         <%= image_tag current_user.image_url , id: 'profilimg', class: 'img-responsive img-circle '%>
          </ul>
@@ -92,7 +91,7 @@
 </nav></div>
 <div class="col-md-1"><%= image_tag "i.gif"%><%= image_tag "i.gif"%></div>
 
-
+</div>
 
 
 
@@ -106,7 +105,7 @@
     
     <div class="col-md-12 footer">
           
-      <p>© all right reserved to Tumba cws 2018  developed by: JULES All RIGHTS RESERVED.</p>
+      <p>© Tumba cws 2018  developed by: JULES All RIGHTS RESERVED.</p>
    
  </div></div>
     

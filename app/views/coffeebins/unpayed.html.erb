@@ -1,11 +1,62 @@
-<% @cofeebin.each do |p| %>
-quantity
-<%= p.cquantity %><br>
+
+      
+       <% if isadmin? %>
+ <div class="col-md-3 ">
+			<ul class="nav nav-pills nav-stacked side">
+				<li ><a href="/">Home</a></li>
+				<li ><%= link_to "Add Coffeebeans", new_coffeebin_path %></li>
+				<li ><%= link_to "Change Price", new_price_path %></li>
+				<li  class="active" ><%= link_to "Un-Payed", unpayed_path %></li>
+				<li><%= link_to "Payed", payed_path %></li>
+				<li><%= link_to "Make user admin", makeadmin_path %></li>
+			  <li><%= link_to "Change Profile", edit_user_path(current_user.id)%></li>
+			  <li><%= link_to "My Profile", user_path(current_user.id) %></li>
+			</ul>
+		</div> 
+		<% elsif logged_in?%>
+		<div class="col-md-3 ">
+			<ul class="nav nav-pills nav-stacked side ">
+				<li ><a href="/">Home</a></li>
+				<li class="active"><%= link_to "Un-Payed", unpayedforuser_path %></li>
+				<li><%= link_to "Payed", payedforuser_path %></li>
+				<li><%= link_to "Change Profile", edit_user_path(current_user.id)%></li>
+				<li><%= link_to "My Profile", user_path(current_user.id) %></li>
+			</ul>
+		</div>
+    <% end%>
+ <%= link_to 'Generate Report','/unpayed.pdf', target: :_blank ,class:'btn btn-success pull-right', style:'margin-bottom:5px;'%>
+
+ 
+<% @unpayedusers.each do |p| %>
+<div class="panel-group col-md-8 pull-right">
+  <div class="panel panel-primary">
+      <div class="panel-heading"><%= p.name%>  <%= image_tag  '/uploads/user/image/'.to_s() + p.id.to_s + '/'.to_s() + p.image ,class:'img-responsive img-circle pull-right', id: 'profilimg'%> </div>
+      <div class="panel-body">quantity
+<%= p.cquantity %>Kg<br>
 amount 
 <%= p.camount %><br>
+</div>
+    </div></div>
+ 
 
-<%= p.name%> <%= p.id%><br><hr>
 <% end %>
+
+
+<% @totalunpayed.each do |t| %>
+<div class="panel-group col-md-8 pull-right ">
+<div class="panel panel-primary ">
+
+  <div class="panel-heading text-center">
+    <h3><b>Total Quantity: 
+<%= t.qty %>Kg<br><br>
+Total Amount:
+<%= t.amt %> Frw<br>
+</h3></b></div>
+</div></div>
+
+<% end %>
+
+
 
 
 

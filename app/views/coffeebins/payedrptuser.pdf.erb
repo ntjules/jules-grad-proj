@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+  </head>
+  <body>
+<h2>Tumba coffee washing station</h2><hr>
+ <h3> payed coffeebins   (for: <%= current_user.name %> )</h3>
+ 
+<div class=" table-responsive col-md-9 pull-right">
+<table class="table table-hover table-primary" style="background-color:white;font-color:black">
+  
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Quantity /Kg</th>
+      <th scope="col">Amount  Frw</th>
+    
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% @cofeebinpayed_foruser.each do |p| %>
+    <tr>
+
+      <th scope="row"><%= p.created_at.strftime("%d/%B/%Y")%></th>
+      <td><%= p.quantity %> Kg</td>
+      <td><%= p.amount %> Frw</td>
+      
+    </tr>     
+
+    <% end %>
+     <% @totalpayed_foruser.each do |p| %>
+    <tr>
+
+      <th scope="row">Total</th>
+      
+      <th><%= p.qty %> Kg</th>
+      <th><%= p.amt %> Frw</th>
+      
+    </tr>     
+
+    <% end %>
+    
+    
+  
+  </tbody>
+</table>
+</div>
+  </body>
+</html>

@@ -1,9 +1,32 @@
-
- <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <% if isadmin? %>
+ <div class="col-md-3 ">
+			<ul class="nav nav-pills nav-stacked side">
+				<li ><a href="/">Home</a></li>
+				<li ><%= link_to "Add Coffeebeans", new_coffeebin_path %></li>
+				<li ><%= link_to "Change Price", new_price_path %></li>
+				<li><%= link_to "Un-Payed", unpayed_path %></li>
+				<li><%= link_to "Payed", payed_path %></li>
+				<li><%= link_to "Make user admin", makeadmin_path %></li>
+			  <li class="active"><%= link_to "Change Profile", edit_user_path(current_user.id)%></li>
+			  <li><%= link_to "My Profile", user_path(current_user.id) %></li>
+			</ul>
+		</div>
+		<% elsif logged_in?%>
+		<div class="col-md-3 ">
+			<ul class="nav nav-pills nav-stacked side ">
+				<li ><a href="/">Home</a></li>
+				<li ><%= link_to "Un-Payed", unpayedforuser_path %></li>
+				<li><%= link_to "Payed", payedforuser_path %></li>
+				<li class="active"><%= link_to "Change Profile", edit_user_path(current_user.id)%></li>
+				<li><%= link_to "My Profile", user_path(current_user.id) %></li>
+			</ul>
+		</div>
+    <% end%>
+ <div  style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-2 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <div class="panel-title">Sign Up</div>
-                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a  data-toggle="modal" data-target="#myModal">Sign In</a></div>
+                            <div class="panel-title">Change Profile</div>
+                            
                         </div>  
                         <div class="panel-body" >
                             <%= form_with(model: @user,  class: 'form-horizontal', local: true) do |f| %> 
@@ -85,7 +108,7 @@
                                     <!-- Button -->                                        
                                     <div class="col-md-offset-3 col-md-9">
                                         <!--<button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>-->
-                                          <%= f.submit "Sign UP" , class: 'btn btn-info' %>
+                                          <%= f.submit "Save Changes" , class: 'btn btn-info' %>
                                     <% end %>
 
                                     </div>
