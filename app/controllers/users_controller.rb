@@ -22,8 +22,8 @@ class UsersController < ApplicationController
     end
    
    def show
-      @price = Price.last
-    @current_price =@price.price
+      @price = Price.last.price
+    
    end
    def edit
    end
