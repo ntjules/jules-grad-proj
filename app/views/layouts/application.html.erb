@@ -97,14 +97,17 @@
 
  
 
-
- <% if logged_in? %>
+ 
+ <% 
+ @price = Price.last
+    @current_price =@price.price
+    if logged_in? %>
  
 <div class= 'row col-md-offset-4 text-center'>
 <div class= "col-md-3">
   <div class="panel panel-warning ">
     <div class="panel-heading ">
-    <h4><%=  current_price %></h4>
+    <h4><%=  @current_price %></h4>
     <label>Current Price<label></div>
   </div></div>
   <div class= "col-md-3">
