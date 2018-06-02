@@ -6,6 +6,7 @@ class CoffeebinsController < ApplicationController
    def new
     @cofeebin = Coffeebin.new
      @user = User.all
+     @price = Price.last.price
    end
       def payed
 
@@ -75,6 +76,7 @@ class CoffeebinsController < ApplicationController
    end
    def create
      @price = Price.last
+    
          @cofeebin = Coffeebin.new(coff_params)
        @cofeebin.amount = @price.price * params[:coffeebin][:quantity].to_f
      if @cofeebin.save

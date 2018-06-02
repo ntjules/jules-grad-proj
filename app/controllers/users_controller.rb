@@ -22,13 +22,14 @@ class UsersController < ApplicationController
     end
    
    def show
-      @price = Price.last.price
+
     
    end
    def edit
    end
    def makeadmin
      @users=User.all
+           
      
    end
    def updateadmin
