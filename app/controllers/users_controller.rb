@@ -52,10 +52,23 @@ class UsersController < ApplicationController
       render 'edit'
     end
    end
+   def customermsg
+      @recipients = User.where(:admin => 1)
+  emails = @recipients.collect(&:email).join(",")
+      ContactMailer.send_mail2(params,emails).deliver_now
+       if ContactMailer.thanks(params).deliver_now
+        redirect_to contact_us_path, notice: "message sent！"
+        else
+     redirect_to contact_us_path, notice: "message not sent！"
+       end
+   end
   private
   def user_params
     params.require(:user).permit(:name, :email, :password,:address,
                                  :password_confirmation,:address,:image)
+  end
+  def customer_params
+    params.require(:customer).permit(:name, :email, :message,:subject)
   end
    def set_user
       @user = User.find(params[:id])

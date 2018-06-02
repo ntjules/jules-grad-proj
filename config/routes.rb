@@ -8,6 +8,7 @@ Rails.application.routes.draw do
    get    '/about_us'     ,to: 'users#about_us' ,as: 'about_us'
    get    '/makeadmin'     ,to: 'users#makeadmin' ,as: 'makeadmin' 
    put    '/updateadmin/:id'         ,to: 'users#updateadmin' ,as: 'updateadmin'
+   post    '/mailc'         ,to: 'users#customermsg'
    
   resources :sessions, only: [:new, :create, :destroy]
   resources :prices, only: [:new, :create]
