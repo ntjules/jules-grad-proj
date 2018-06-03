@@ -5,7 +5,7 @@ class CoffeebinsController < ApplicationController
   end
    def new
     @cofeebin = Coffeebin.new
-     @user = User.all
+     @user = User.all.where(admin:0)
     
    end
       def payed
