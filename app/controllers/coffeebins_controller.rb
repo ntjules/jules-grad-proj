@@ -6,7 +6,7 @@ class CoffeebinsController < ApplicationController
    def new
     @cofeebin = Coffeebin.new
      @user = User.all
-     @price = Price.last.price
+    
    end
       def payed
 
